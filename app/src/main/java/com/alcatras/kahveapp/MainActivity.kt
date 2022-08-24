@@ -3,6 +3,7 @@ package com.alcatras.kahveapp
 import android.animation.Animator
 import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
+import android.content.Intent
 import android.graphics.Path
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -26,6 +27,11 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
+    }
+    fun showAllCoffe(view: View){
+        val intent=Intent(this,AllCoffeActivity::class.java)
+        startActivity(intent)
 
     }
 }
