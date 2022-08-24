@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/information"
+            android:layout_width="170dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="170dp"
+            android:layout_marginTop="80dp"
+            android:text="TextView"
+            android:textSize="12dp"
+            tools:layout_editor_absoluteX="110dp"
+            tools:layout_editor_absoluteY="254dp" />
+
+        <TextView
+            android:id="@+id/coffeName"
+            android:layout_width="170dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="170dp"
+            android:layout_marginTop="25dp"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:text="TextView"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="110dp"
+            tools:layout_editor_absoluteY="318dp" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageView2"
+            android:layout_width="120dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:clipToOutline="true"
+            app:shapeAppearanceOverlay="@style/RoundedSquare"
+            tools:layout_editor_absoluteX="111dp"
+            tools:layout_editor_absoluteY="340dp"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="290dp"
+            android:layout_marginTop="130dp"
+            android:numStars="1"
+            android:onClick="favourite" />
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
