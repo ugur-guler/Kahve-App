@@ -14,11 +14,9 @@
         android:theme="@style/Theme.KahveApp"
         tools:targetApi="31">
         <activity
-            android:name=".SelectedCoffe"
+            android:name=".SelectedCoffeActivity"
             android:exported="false" />
-        <activity
-            android:name=".FavouriteCoffeActivity"
-            android:exported="false" />
+
         <activity
             android:name=".AllCoffeActivity"
             android:exported="false" />

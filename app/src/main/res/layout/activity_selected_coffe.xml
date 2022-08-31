@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SelectedCoffe">
+    tools:context=".SelectedCoffeActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -18,7 +18,7 @@
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
     <TextView
-        android:id="@+id/coffeName"
+        android:id="@+id/tvcoffeName"
         android:layout_width="191dp"
         android:layout_height="37dp"
         android:layout_marginStart="20dp"
@@ -76,7 +76,7 @@
         app:layout_constraintTop_toBottomOf="@+id/difficulty" />
 
     <TextView
-        android:id="@+id/explanation"
+        android:id="@+id/tvExplanationOfCoffe"
         android:layout_width="350dp"
         android:layout_height="125dp"
         android:layout_marginStart="20dp"
@@ -97,7 +97,7 @@
         android:textColor="@color/purple_700"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/explanation" />
+        app:layout_constraintTop_toBottomOf="@+id/tvExplanationOfCoffe" />
 
     <TextView
         android:id="@+id/textView5"
@@ -115,7 +115,7 @@
 
     <TextView
         android:scrollbars="vertical"
-        android:id="@+id/recipe"
+        android:id="@+id/tvRecipeOfCoffe"
         android:layout_width="350dp"
         android:layout_height="125dp"
         android:layout_marginStart="20dp"
