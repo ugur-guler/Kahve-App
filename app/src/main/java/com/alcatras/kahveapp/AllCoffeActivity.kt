@@ -13,7 +13,7 @@ import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
 
 class AllCoffeActivity : AppCompatActivity() {
-    private lateinit var coffeList: ArrayList<CoffeItemClass>
+
     private lateinit var binding: ActivityAllCoffeBinding
     val compositeDisposable=CompositeDisposable()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,63 +38,35 @@ class AllCoffeActivity : AppCompatActivity() {
         coffeList= arrayListOf<CoffeItemClass>(americano,capucino,espresso,filtre,latte,macchiato,turk)
 */
 
-
+        binding.recyclerView.layoutManager = LinearLayoutManager(this@AllCoffeActivity)
         compositeDisposable.add(
-            coffeDao.getAll().subscribeOn(Schedulers.io())
+               coffeDao.getAll().subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe()
+                .subscribe(
+                    {
+                       take(it)
+                    }
+                )
 
 
         )
-        /*
-
-            coffeList = coffeDao.getAll()
-            binding.recyclerView.layoutManager = LinearLayoutManager(this@AllCoffeActivity)
-            binding.recyclerView.adapter = Adapter(coffeList, object : Adapter.Listener {
-                override fun onItemClick(
-                    position: Int,
-                    item: CoffeItemClass,
-                    holder: Adapter.ClassHolder
-                ) {
-                    val intent = Intent(holder.itemView.context, SelectedCoffe::class.java)
-                    holder.itemView.context.startActivity(intent)
-                }
-            }
-            )
-
-         */
-        fun take() {
-            binding.recyclerView.layoutManager = LinearLayoutManager(this@AllCoffeActivity)
-            binding.recyclerView.adapter = AdapterOfSelectedCoffe(coffeList, object : AdapterOfSelectedCoffe.Listener {
-                override fun onItemClick(
-                    position: Int,
-                    item: CoffeItemClass,
-                    holder: AdapterOfSelectedCoffe.ClassHolder
-                ) {
-                    val intent = Intent(holder.itemView.context, SelectedCoffeActivity::class.java)
-                    holder.itemView.context.startActivity(intent)
-                }
-            }
-            )
-
-
-            /*
-
-     fun change(view:View,position:Int){
-
-
-        var intent= Intent(this,SelectedCoffe::class.java)
-        intent.putExtra("list",classList.get(position))
-        startActivity(intent)
-
-
-
     }
-
-     */
+    fun take(coffeList: List<CoffeItemClass>) {
+        binding.recyclerView.adapter = AdapterOfSelectedCoffe(coffeList, object : AdapterOfSelectedCoffe.Listener {
+            override fun onItemClick(
+                position: Int,
+                item: CoffeItemClass,
+                holder: AdapterOfSelectedCoffe.ClassHolder
+            ) {
+                val intent = Intent(holder.itemView.context, SelectedCoffeActivity::class.java)
+                holder.itemView.context.startActivity(intent)
+            }
         }
+        )
     }
-}
+
+    }
+
 
 
 

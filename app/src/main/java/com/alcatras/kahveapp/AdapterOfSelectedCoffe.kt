@@ -28,56 +28,15 @@ class AdapterOfSelectedCoffe(val classList: List<CoffeItemClass>, val listener: 
     }
 
     override fun onBindViewHolder(holder: ClassHolder, position: Int) {
-/*
-        holder.binding.coffeName.text=classList.get(position).name
-        holder.binding.imageView.setImageResource(classList.get(position).image)
+
+        holder.binding.coffeName.text=classList.get(position).coffeName
+        holder.binding.imageView.setImageResource(classList.get(position).coffeImage)
         //holder.binding.ratingBar.setRating(classList.get(position).rating.toFloat())
-        holder.binding.explanation.text=classList.get(position).explanation
-        /*
-        holder.binding.ratingBar.setOnClickListener {
-            if(holder.binding.ratingBar.getRating()==1f){
-                holder.binding.ratingBar.setRating(1f)
-
-            }
-            else{
-                holder.binding.ratingBar.setRating(0f)
-            }
-        }
-
-         */
-
-/*
-        if(holder.binding.ratingBar.isActivated){
-            holder.binding.ratingBar.setRating((1).toFloat())
-        }
-
- */
-
-
+        holder.binding.tvExplanationOfCoffe.text=classList.get(position).aboutCoffe
         holder.binding.cardView.setOnClickListener {
-           listener.onItemClick(position,classList[position],holder)
-
-
-
+            listener.onItemClick(position,classList[position],holder)
 
         }
-
-
-/*
-            var intent=Intent(holder.itemView.context,SelectedCoffe::class.java)
-            intent.putExtra("list",classList.get(position))
-            holder.itemView.context.startActivity(intent)
-
- */
-
- */
-
-
-
-
-
-
-
 
     }
 
