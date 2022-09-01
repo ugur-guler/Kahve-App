@@ -11,4 +11,7 @@ data class CoffeItemClass(
 ){
     @PrimaryKey(autoGenerate = true)
     var id:Int?=null
+
+    var favourite:Int=0
+
 }
