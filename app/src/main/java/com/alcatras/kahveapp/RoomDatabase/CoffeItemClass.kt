@@ -6,7 +6,8 @@ import androidx.room.PrimaryKey
 data class CoffeItemClass(
     @ColumnInfo val coffeImage:Int,
     @ColumnInfo val coffeName:String,
-    @ColumnInfo val aboutCoffe:String
+    @ColumnInfo val aboutCoffe:String,
+    @ColumnInfo val image:ByteArray
 ){
     @PrimaryKey(autoGenerate = true)
     var id:Int?=null

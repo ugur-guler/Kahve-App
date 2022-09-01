@@ -1,5 +1,7 @@
 package com.alcatras.kahveapp
 
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -29,8 +31,9 @@ class AdapterOfSelectedCoffe(val classList: List<CoffeItemClass>, val listener: 
 
     override fun onBindViewHolder(holder: ClassHolder, position: Int) {
 
+
         holder.binding.coffeName.text=classList.get(position).coffeName
-        holder.binding.imageView.setImageResource(classList.get(position).coffeImage)
+        holder.binding.imageView.setImageBitmap(toBitmap(classList.get(position).image))
         //holder.binding.ratingBar.setRating(classList.get(position).rating.toFloat())
         holder.binding.tvExplanationOfCoffe.text=classList.get(position).aboutCoffe
         holder.binding.cardView.setOnClickListener {
@@ -42,6 +45,9 @@ class AdapterOfSelectedCoffe(val classList: List<CoffeItemClass>, val listener: 
 
     override fun getItemCount(): Int {
         return classList.size
+    }
+    fun toBitmap(byteArray: ByteArray):Bitmap{
+        return BitmapFactory.decodeByteArray(byteArray,0,byteArray.size)
     }
 
 

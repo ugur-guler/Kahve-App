@@ -11,4 +11,6 @@ interface CoffeDao {
     fun getAll(): Flowable<List<CoffeItemClass>>
     @Insert
     fun insertAll( coffe:ArrayList<CoffeItemClass>):Completable
+    @Query("DELETE  FROM coffeitemclass")
+    fun deleteAll():Completable
 }
