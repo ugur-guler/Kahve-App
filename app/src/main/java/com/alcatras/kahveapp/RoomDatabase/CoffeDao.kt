@@ -13,6 +13,5 @@ interface CoffeDao {
     fun insertAll( coffe:ArrayList<CoffeItemClass>):Completable
     @Query("DELETE  FROM coffeitemclass")
     fun deleteAll():Completable
-    @Query("UPDATE coffeitemclass SET favourite=:favourite WHERE id=:id")
-    fun updateFavourite(favourite:Int,id:Int):Completable
+
 }
