@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
+import com.alcatras.kahveapp.Activities.MainActivity
 import com.alcatras.kahveapp.Adapter.AdapterOfSelectedCoffe
 import com.alcatras.kahveapp.R
 import com.alcatras.kahveapp.RoomDatabase.AppDatabase
@@ -35,6 +36,7 @@ class ListedCoffeFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
 
 
     }
@@ -104,6 +106,8 @@ class ListedCoffeFragment : Fragment() {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe()
+
+
     }
     fun getData(coffeDao: CoffeDao){
         coffeDao.getAll()
